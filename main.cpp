@@ -1,5 +1,5 @@
 #include "raylib.h"
-#include <math.h>
+
 #include <iostream>
 #include <queue>
 #include <assert.h>    // For error-checking purposes
