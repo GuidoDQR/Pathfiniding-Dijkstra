@@ -261,10 +261,6 @@ int main(int argc, char const *argv[])
 
     int id = 0;
     int move =1;
-    int stopX = -1;
-    int stopY = -1;
-    bool stop = false;
-    bool stopDraw = false;
     bool pathFound = false;
     int k = 0;
     
@@ -324,7 +320,6 @@ int main(int argc, char const *argv[])
 	while (!WindowShouldClose())    // Detect window close button or ESC key
     {
         pathFound = false; // Sirve para mostrar el camino, en caso de que se pueda
-    	stopDraw = false;
 
     	initialID = mapa[initialPosX][initialPosY].getId();
     	targetID = mapa[targetPosX][targetPosY].getId();
@@ -553,13 +548,9 @@ int main(int argc, char const *argv[])
     					}		
     				}
                    
-    				if(j >= stopY && i >= stopX && stop == true){
-    					stopDraw = true;
-    				}
-
-    				if(stopDraw == false){
+    				
     					mapa[i][j].Draw();
-    				}
+    				
     				
     			}
     		}        
