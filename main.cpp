@@ -107,6 +107,8 @@ public:
   			adyacentTiles.push(id+1);
   		}
   		
+  		
+  		
   		return adyacentTiles;
   	}
   		
@@ -303,17 +305,17 @@ int main(int argc, char const *argv[])
     Color nextTileColor[2] = {RAYWHITE, RAYWHITE}; 
     int nextTileMove[2] = {1,1}; 
     // MOVIMIENTOS DE COSTO MAYOR
-    							mapa[2][6].setMovement(2);  mapa[2][7].setMovement(2);  mapa[2][8].setMovement(2);  mapa[2][9].setMovement(2);
-    						    mapa[3][6].setMovement(2);  mapa[3][7].setMovement(2);  mapa[3][8].setMovement(2);  mapa[3][9].setMovement(2);
-    mapa[4][5].setMovement(2);  mapa[4][6].setMovement(2);  mapa[4][7].setMovement(2);  mapa[4][8].setMovement(2);  mapa[4][9].setMovement(2);  mapa[4][10].setMovement(2);
-    mapa[5][5].setMovement(2);  mapa[5][6].setMovement(2);  mapa[5][7].setMovement(2);  mapa[5][8].setMovement(2);  mapa[5][9].setMovement(2);  mapa[5][10].setMovement(2);
-    mapa[6][5].setMovement(2);  mapa[6][6].setMovement(2);  mapa[6][7].setMovement(2);  mapa[6][8].setMovement(2);								mapa[6][10].setMovement(2);
-    mapa[7][5].setMovement(2);  mapa[7][6].setMovement(2);  							mapa[7][8].setMovement(2);  mapa[7][9].setMovement(2);  mapa[7][10].setMovement(2);
-    mapa[8][5].setMovement(2);  mapa[8][6].setMovement(2);  mapa[8][7].setMovement(2);  mapa[8][8].setMovement(2);                              mapa[8][10].setMovement(2);
-    mapa[9][5].setMovement(2);  mapa[9][6].setMovement(2);                              mapa[9][8].setMovement(2);  mapa[9][9].setMovement(2);  mapa[9][10].setMovement(2);
-    mapa[10][5].setMovement(2); mapa[10][6].setMovement(2); mapa[10][7].setMovement(2); mapa[10][8].setMovement(2); mapa[10][9].setMovement(2); mapa[10][10].setMovement(2);
-    							mapa[11][6].setMovement(2); mapa[11][7].setMovement(2); mapa[11][8].setMovement(2); mapa[11][9].setMovement(2);
-    							mapa[12][6].setMovement(2); mapa[12][7].setMovement(2); mapa[12][8].setMovement(2); mapa[12][9].setMovement(2);
+    							mapa[2][6].setMovement(10);  mapa[2][7].setMovement(10);  mapa[2][8].setMovement(10);  mapa[2][9].setMovement(10);
+    						    mapa[3][6].setMovement(10);  mapa[3][7].setMovement(10);  mapa[3][8].setMovement(10);  mapa[3][9].setMovement(10);
+    mapa[4][5].setMovement(10);  mapa[4][6].setMovement(10);  mapa[4][7].setMovement(10);  mapa[4][8].setMovement(10);  mapa[4][9].setMovement(10);  mapa[4][10].setMovement(10);
+    mapa[5][5].setMovement(10);  mapa[5][6].setMovement(10);  mapa[5][7].setMovement(10);  mapa[5][8].setMovement(10);  mapa[5][9].setMovement(10);  mapa[5][10].setMovement(10);
+    mapa[6][5].setMovement(10);  mapa[6][6].setMovement(10);  mapa[6][7].setMovement(10);  mapa[6][8].setMovement(10);								mapa[6][10].setMovement(10);
+    mapa[7][5].setMovement(10);  mapa[7][6].setMovement(10);  							mapa[7][8].setMovement(10);  mapa[7][9].setMovement(10);  mapa[7][10].setMovement(10);
+    mapa[8][5].setMovement(10);  mapa[8][6].setMovement(10);  mapa[8][7].setMovement(10);  mapa[8][8].setMovement(10);                              mapa[8][10].setMovement(10);
+    mapa[9][5].setMovement(10);  mapa[9][6].setMovement(10);                              mapa[9][8].setMovement(10);  mapa[9][9].setMovement(10);  mapa[9][10].setMovement(10);
+    mapa[10][5].setMovement(10); mapa[10][6].setMovement(10); mapa[10][7].setMovement(10); mapa[10][8].setMovement(10); mapa[10][9].setMovement(10); mapa[10][10].setMovement(10);
+    							mapa[11][6].setMovement(10); mapa[11][7].setMovement(10); mapa[11][8].setMovement(10); mapa[11][9].setMovement(10);
+    							mapa[12][6].setMovement(10); mapa[12][7].setMovement(10); mapa[12][8].setMovement(10); mapa[12][9].setMovement(10);
     
 	while (!WindowShouldClose())    // Detect window close button or ESC key
     {
@@ -552,9 +554,9 @@ int main(int argc, char const *argv[])
     		}        
 
     		DrawText("Do RIGHT CLICK in a square to make a wall", 10, 10, 20, BLACK);
-    		DrawText("Do LEFT CLICK in a square to give more cost", 10, 30, 20, BLACK);
-
+    		DrawText("Do Left CLICK in a square to give more cost", 10, 30, 20, BLACK);
     		DrawText(TextFormat("id: %d", id), 10, 380, 20, BLACK);
+
             DrawText(TextFormat("Cost Move: %d", move), 10, 400, 20, BLACK);
                        
 		EndDrawing();
