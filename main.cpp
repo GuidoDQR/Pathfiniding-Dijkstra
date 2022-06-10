@@ -339,7 +339,6 @@ int main(int argc, char const *argv[])
 		    		}
 
 		    		if(mapa[i][j].getMovement() == 10){
-		    			//mapa[i][j].setColorLine(LIME);
 		    			mapa[i][j].setColorShape(LIME);
 		    		}		  		
 		    	}
@@ -350,7 +349,6 @@ int main(int argc, char const *argv[])
             for(int i=0;i<tilesX*tilesY;i++){
             	came_from[i] = -1; // Se inicializa a todos los array a -1
                 cost_so_far[i] = 0;
-                //pass[i] = false;
             }
             
             while(frontier.size() != 0){
