@@ -106,7 +106,7 @@ public:
   		if((id+1) % tilesX != 0 ){
   			adyacentTiles.push(id+1);
   		}
-  			
+  		
   		return adyacentTiles;
   	}
   		
@@ -242,9 +242,9 @@ inline int pathPriority<T>::size(void)
 
 
 Vector2 Coordinates(int);
-bool MapMouseOver(tile (&mapa)[tilesY][tilesX],int,int);
-bool MapPressedBoton(tile (&mapa)[tilesY][tilesX],int,int,int);
-bool MapPressedBotonDown(tile (&mapa)[tilesY][tilesX],int,int,int);
+bool MapMouseOver(tile (&mapa)[tilesY][tilesX], const int, const int);
+bool MapPressedBoton(tile (&mapa)[tilesY][tilesX], const int, const int,const int);
+bool MapPressedBotonDown(tile (&mapa)[tilesY][tilesX], const int, const int,const int);
 
 int main(int argc, char const *argv[])
 {
@@ -552,9 +552,9 @@ int main(int argc, char const *argv[])
     		}        
 
     		DrawText("Do RIGHT CLICK in a square to make a wall", 10, 10, 20, BLACK);
-    		DrawText("Do Left CLICK in a square to give more cost", 10, 30, 20, BLACK);
-    		DrawText(TextFormat("id: %d", id), 10, 380, 20, BLACK);
+    		DrawText("Do LEFT CLICK in a square to give more cost", 10, 30, 20, BLACK);
 
+    		DrawText(TextFormat("id: %d", id), 10, 380, 20, BLACK);
             DrawText(TextFormat("Cost Move: %d", move), 10, 400, 20, BLACK);
                        
 		EndDrawing();
@@ -579,7 +579,7 @@ Vector2 Coordinates(int id){
 	return newPos;
 }
 
-bool MapMouseOver(tile (&mapa)[tilesY][tilesX] ,int i, int j){
+bool MapMouseOver(tile (&mapa)[tilesY][tilesX], const int i, const int j){
 	bool MouseOver = false;
     bool left = false;
     bool right = false;
@@ -617,7 +617,7 @@ bool MapMouseOver(tile (&mapa)[tilesY][tilesX] ,int i, int j){
 	return MouseOver;
 }
 
-bool MapPressedBoton(tile (&mapa)[tilesY][tilesX] ,int i, int j, int button){
+bool MapPressedBoton(tile (&mapa)[tilesY][tilesX], const int i, const int j, const int button){
 	bool PressedBoton = false;
     bool left = false;
     bool right = false;
@@ -667,7 +667,7 @@ bool MapPressedBoton(tile (&mapa)[tilesY][tilesX] ,int i, int j, int button){
 	return PressedBoton;
 }
 
-bool MapPressedBotonDown(tile (&mapa)[tilesY][tilesX] ,int i, int j, int button){
+bool MapPressedBotonDown(tile (&mapa)[tilesY][tilesX] ,const int i, const int j, const int button){
 	bool PressedBoton = false;
     bool left = false;
     bool right = false;
