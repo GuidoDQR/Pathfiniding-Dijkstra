@@ -194,8 +194,6 @@ void pathPriority<T>::push(const T &newid, const T &cost){
 	// Error Check: Make sure we aren't exceeding our maximum storage space
     assert( ElemCount < MAX_NUM );
     
-    //cout << "init: "<< End << endl;
-
     Data[ End   ][0] = newid; // El esta el id del tile
     Data[ End++ ][1] = cost;  // el esta el costo
 
@@ -332,33 +330,6 @@ int main(int argc, char const *argv[])
     	targetID = mapa[targetPosX][targetPosY].getId();
 
     	cost_so_far[initialID] = 0;
-
-    	if(IsKeyPressed(KEY_Q)){
-    		if(stop){
-    			stop = false;
-    		}else{
-    			stop = true;
-    		}
-
-    		stopX = GetRandomValue(0,tilesX);
-    		stopY = GetRandomValue(0,tilesY);
-    	}
-
-    	if(IsKeyPressed(KEY_A) && stopY > 0){
-    		stopY--;
-    	}
-    	if(IsKeyPressed(KEY_D) && stopY < tilesY){
-    		stopY++;
-    	}
-
-    	if(IsKeyPressed(KEY_W) && stopX > 0){
-    		stopX--;
-    	}
-
-    	if(IsKeyPressed(KEY_S) && stopX < tilesX){
-    		stopX++;
-   		}
-
 
     	BeginDrawing();
             ClearBackground(BLACK);
@@ -548,14 +519,6 @@ int main(int argc, char const *argv[])
     					dragTarget = false;
     				}
 
-    				if(mapa[i][j].MouseOver() && mapa[i][j-1].MouseOver() == false && mapa[i][j+1].MouseOver() == false
-    				&& mapa[i-1][j].MouseOver() == false && mapa[i+1][j].MouseOver() == false){
-					
-    					id = mapa[i][j].getId();
-    					move = mapa[i][j].getMovement(); 
-    					DrawText(TextFormat("(%d,%d)", i,j), 10, 400, 20, BLUE);
-    				}
-
     				// Muros
     				// Baja el movimiento
 
@@ -592,15 +555,7 @@ int main(int argc, char const *argv[])
     				}
     				
     			}
-    		}
-            
-
-            DrawText("Presione A o W para mostrar el anterior", 10, 300, 20, VIOLET);
-            DrawText("Presione D o S para mostrar el siguiente", 10, 320, 20, VIOLET);
-           
-            DrawText(TextFormat("id: %d", id), 10, 360, 20, VIOLET);
-           	
-            
+    		}        
             // Coste de movimiento del tile donde esta el mouse 
             DrawText(TextFormat("Cost Move: %d", move), 10, 380, 20, VIOLET);
                        
