@@ -106,9 +106,7 @@ public:
   		if((id+1) % tilesX != 0 ){
   			adyacentTiles.push(id+1);
   		}
-  		
-  		
-  		
+  			
   		return adyacentTiles;
   	}
   		
