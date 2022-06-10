@@ -107,8 +107,6 @@ public:
   			adyacentTiles.push(id+1);
   		}
   		
-  		
-  		
   		return adyacentTiles;
   	}
   		
